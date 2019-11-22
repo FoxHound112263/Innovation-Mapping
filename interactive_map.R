@@ -23,6 +23,7 @@ library(leaflet.providers)
 data <- read.xlsx('C:/Users/LcmayorquinL/Desktop/MAPEO/resultados.xlsx',sheet = 2)
 # HOME
 data <- read.xlsx('C:/Users/User/OneDrive - Departamento Nacional de Planeacion/DIDE/2019/Data Science Projects/Innovation-Mapping/data/resultados.xlsx',sheet = 2)
+data <- data[-nrow(data),]
 
 data$latitude <- as.numeric(data$latitude)
 data$longitude <- as.numeric(data$longitude)
@@ -60,6 +61,7 @@ m <-  leaflet(data = data) %>%
   ),
                     label= data$Nombre.de.la.entidad.pública.a.la.que.pertenece.el.equipo,
                     #icon = icon.ion,
+                    stroke = T, fillOpacity = 0.7,
                     color = new,
   clusterOptions = markerClusterOptions(iconCreateFunction=JS("function (cluster) {    
        childCount = cluster.getChildCount();  
@@ -83,6 +85,8 @@ m
 saveWidget(m, file="")
 library(mapview)
 mapshot(m, url = "C:/Users/LcmayorquinL/Desktop/mapeo_equipos.html")
+# Home
+mapshot(m, url = "C:/Users/User/Desktop/mapeo_equipos.html")
 
 
 basemap <- leaflet(data = data) %>%
