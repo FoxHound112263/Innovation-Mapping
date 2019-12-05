@@ -27,9 +27,9 @@ new <- c("#15A49D","#DDDB00")[data$'Tipo.de.la.entidad.publica']
 
 
 ui <- dashboardPage(
-  dashboardHeader(title = 'MAPEO EQUIPOS INN. PÚBLICA',titleWidth = 1900),
+  dashboardHeader(title = 'MAPEO EQUIPOS INN. PÚBLICA',titleWidth = 400),
   dashboardSidebar(
-    collapsed = TRUE
+    collapsed = TRUE,disable = T
   ),
   dashboardBody(
     tags$style(type = "text/css", "#map {height: calc(100vh - 80px) !important;}"),
@@ -58,8 +58,8 @@ server <- function(input, output) {
       "<strong>Propósito</strong>: ",
       data$Describe.en.una.frase.el.propósito.de.este.equipo,
       "</br>",
-      "<strong>Meta</strong>: ",
-      data$Meta.1,
+      #"<strong>Meta</strong>: ",
+      #data$Meta.1,
       "</div>"
     ),
     label= data$Nombre.de.la.entidad.pública.a.la.que.pertenece.el.equipo,
