@@ -27,9 +27,15 @@ new <- c("#15A49D","#DDDB00")[data$'Tipo.de.la.entidad.publica']
 
 
 ui <- dashboardPage(
-  dashboardHeader(title = 'MAPEO EQUIPOS INN. PÚBLICA',titleWidth = 400),
+  dashboardHeader(title = 'Mapeo de equipos del sector público - Innovación Pública',titleWidth = 600
+                  ),
   dashboardSidebar(
-    collapsed = TRUE,disable = T
+    collapsed = TRUE,"Trabajo realizado por el Equipo de Innovación Pública del Departamento Nacional de Planeación"
+    #tags$li(a(href = 'http://www.company.com',
+     #         img(src = 'company_logo.png',
+      #            title = "Company Home", height = "30px"),
+       #       style = "padding-top:10px; padding-bottom:10px;"),
+        #    class = "dropdown")
   ),
   dashboardBody(
     tags$style(type = "text/css", "#map {height: calc(100vh - 80px) !important;}"),
